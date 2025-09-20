@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJCODE - Servicios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d0d0d;
+            color: #eaeaea;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: black;
+            border-bottom: 2px solid #6c63ff;
+        }
+
+        header .logo img {
+            width: 150px;
+        }
+
+        nav.menu ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav.menu a {
+            color: #eaeaea;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        nav.menu a:hover,
+        nav.menu a.activo {
+            background: #6c63ff;
+            color: #fff;
+        }
+
+        main {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 60px;
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 4px 16px rgba(106, 13, 173, 0.25);
+            transition: transform 0.2s;
+        }
+
+        section:hover {
+            transform: translateY(-4px);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #6c63ff;
+            border-left: 5px solid #6c63ff;
+            padding-left: 15px;
+            text-shadow: 0 0 10px rgba(106, 13, 173, 0.6);
+        }
+
+        section p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .lista-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .servicio {
+            background: #111;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .servicio:hover {
+            background: #222;
+            transform: translateY(-5px);
+        }
+
+        .servicio h3 {
+            color: #6c63ff;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .servicio p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        footer {
+            background: black;
+            color: #ddd;
+            padding: 50px 40px 20px;
+            border-top: 2px solid #6c63ff;
+        }
+
+        .pieDePagina {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .pieDePagina-seccion h3 {
+            color: #6c63ff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .pieDePagina-seccion ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pieDePagina-seccion ul li {
+            margin-bottom: 10px;
+        }
+
+        .pieDePagina-seccion ul li a {
+            text-decoration: none;
+            color: #bbb;
+            transition: color 0.3s;
+        }
+
+        .pieDePagina-seccion ul li a:hover {
+            color: #6c63ff;
+        }
+
+        .footer-logo {
+            width: 140px;
+            margin-bottom: 15px;
+        }
+
+        .redes a img {
+            width: 35px;
+            margin: 0 8px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .redes a img:hover {
+            transform: scale(1.1);
+        }
+
+        .pieDePagina-abajo {
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .pieDePagina-abajo ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .pieDePagina-abajo ul li a {
+            text-decoration: none;
+            color: #aaa;
+            transition: color 0.3s;
+        }
+
+        .pieDePagina-abajo ul li a:hover {
+            color: #6c63ff;
+        }
+
+        @media(max-width: 768px) {
+            main {
+                padding: 30px 20px;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="KJCODELOGO.webp" alt="Logo KJCODE">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="INDEX.html">INICIO</a></li>
+                <li><a href="NOSOTROS.html">NOSOTROS</a></li>
+                <li><a href="SERVICIOS.html" class="activo">SERVICIOS</a></li>
+                <li><a href="CONTACTO.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="servicios">
+            <h2>Servicios 💻</h2>
+            <p>En <strong>KJCODE</strong> ofrecemos soluciones digitales modernas para tu empresa o proyecto, siempre
+                con
+                tecnología confiable y a la medida.</p>
+
+            <div class="lista-servicios">
+                <div class="servicio">
+                    <h3>Desarrollo Web</h3>
+                    <p>Diseño y programación de páginas web modernas, seguras y adaptadas a cualquier dispositivo.</p>
+                </div>
+                <div class="servicio">
+                    <h3>Aplicaciones</h3>
+                    <p>Creación de aplicaciones personalizadas que ayudan a mejorar procesos y conectar con tus
+                        clientes.</p>
+                </div>
+                <div class="servicio">
+                    <h3>Mantenimiento de Páginas</h3>
+                    <p>Actualizamos y cuidamos tu página para que siempre esté en línea, rápida y al día.</p>
+                </div>
+                <div class="servicio">
+                    <h3>Mejoramiento de Páginas</h3>
+                    <p>Renovamos páginas existentes con mejor diseño, velocidad y nuevas funciones que marcan la
+                        diferencia.</p>
+                </div>
+                <div class="servicio">
+                    <h3>Sistemas Específicos</h3>
+                    <p>Desde inventarios hasta agendamiento de citas, desarrollamos sistemas a la medida de tu empresa.
+                    </p>
+                </div>
+                <div class="servicio">
+                    <h3>Diseño de Interfaces Modernas</h3>
+                    <p>Creación de diseños atractivos y fáciles de usar, para brindar la mejor experiencia digital.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="pieDePagina">
+            <div class="pieDePagina-seccion">
+                <img src="LOGO ANGOSTO.webp" alt="KJCODE Logo" class="footer-logo">
+                <p><strong>Colombia</strong></p>
+                <p><strong>Cel:</strong> +57 318 879 9710</p>
+                <p><strong>Cel:</strong> +57 300 315 6797</p>
+                <p>Bogotá, Colombia</p>
+            </div>
+
+            <div class="pieDePagina-seccion">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="SERVICIOS.html">Desarrollo Web</a></li>
+                    <li><a href="SERVICIOS.html">Aplicaciones a la Medida</a></li>
+                    <li><a href="SERVICIOS.html">Inventario</a></li>
+                    <li><a href="SERVICIOS.html">Agendamiento de Citas</a></li>
+                    <li><a href="SERVICIOS.html">Mantenimiento Web</a></li>
+                </ul>
+            </div>
+
+            <div class="pieDePagina-seccion">
+                <h3>Síguenos</h3>
+                <div class="redes">
+                    <a href="https://www.instagram.com/kjco.de" target="_blank"><img src="INSTAGRAM.webp"
+                            alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@kjco.de" target="_blank"><img src="TIK TOK.webp"
+                            alt="TikTok"></a>
+                    <a href="https://www.facebook.com/profile.php?id=61580866250656" target="_blank"><img
+                            src="FACEBOOK.webp" alt="Facebook"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pieDePagina-abajo">
+            <p>&copy; 2025 KJCODE - Todos los derechos reservados</p>
+            <ul>
+                <li><a href="CONTACTO.html">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll(".card").forEach(card => {
+            card.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+            card.addEventListener("mousemove", e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const rotateY = ((x / rect.width) - 0.5) * 10;
+                const rotateX = ((y / rect.height) - 0.5) * -10;
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                card.style.boxShadow = "0 10px 20px rgba(0,0,0,0.3)";
+            });
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+                card.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+            });
+        });
+    </script>
+</body>
+
+</html>

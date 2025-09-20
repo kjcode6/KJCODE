@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d0d0d;
+    color: #eaeaea;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: black;
+    border-bottom: 2px solid #6c63ff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo img {
+    width: 150px;
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+header nav a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+header nav a:hover,
+header nav a.activo {
+    background: #6c63ff;
+    color: #fff;
+}
+
+#eslogan {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("IMAGENES/FONDO.webp") no-repeat center center/cover;
+    color: #fff;
+    padding: 0 20px;
+}
+
+#eslogan h1 {
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
+    margin-bottom: 15px;
+    color: #6c63ff;
+    line-height: 1.2;
+    word-break: break-word;
+    padding: 0 10px;
+}
+
+#eslogan p {
+    max-width: 700px;
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+#eslogan button {
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#eslogan button:hover {
+    background: #4a42c5;
+}
+
+#bienvenida {
+    padding: 60px 20px;
+    text-align: center;
+    background: #141414;
+}
+
+#bienvenida h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #6c63ff;
+}
+
+#porqueElegirnos {
+    padding: 70px 40px;
+    background: #0d0d0d;
+    text-align: center;
+}
+
+#porqueElegirnos h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #6c63ff;
+}
+
+#porqueElegirnos .servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+#porqueElegirnos .item {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+#porqueElegirnos .item:hover {
+    transform: translateY(-5px);
+    background: #222;
+}
+
+#porqueElegirnos h3 {
+    margin-bottom: 10px;
+    color: #6c63ff;
+}
+
+#proyectos {
+    padding: 70px 40px;
+    background: #141414;
+    text-align: center;
+}
+
+#proyectos h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #6c63ff;
+}
+
+#proyectos .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+#proyectos .card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+#proyectos .card:hover {
+    transform: translateY(-5px);
+    background: #222;
+}
+
+#proyectos h3 {
+    margin-bottom: 10px;
+    color: #6c63ff;
+}
+
+.botonProyectos {
+    margin-top: 40px;
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botonProyectos:hover {
+    background: #4a42c5;
+    transform: scale(1.05);
+}
+
+#contactar {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #6c63ff, #302b63);
+    color: #fff;
+}
+
+#contactar h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contactar p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+#contactar button {
+    background: #fff;
+    color: #6c63ff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+#contactar button:hover {
+    background: #302b63;
+    color: #fff;
+}
+
+footer {
+    background: black;
+    color: #ddd;
+    padding: 50px 40px 20px;
+    border-top: 2px solid #6c63ff;
+}
+
+.pieDePagina {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.pieDePagina-seccion h3 {
+    color: #6c63ff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.pieDePagina-seccion ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pieDePagina-seccion ul li {
+    margin-bottom: 10px;
+}
+
+.pieDePagina-seccion ul li a {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.pieDePagina-seccion ul li a:hover {
+    color: #6c63ff;
+}
+
+.footer-logo {
+    width: 140px;
+    margin-bottom: 15px;
+}
+
+.redes a img {
+    width: 35px;
+    margin: 0 8px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.redes a img:hover {
+    transform: scale(1.1);
+}
+
+.pieDePagina-abajo {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.pieDePagina-abajo ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+}
+
+.pieDePagina-abajo ul li a {
+    text-decoration: none;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.pieDePagina-abajo ul li a:hover {
+    color: #6c63ff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+    #eslogan h1 {
+        font-size: 2.2rem;
+    }
+
+    #eslogan p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    #menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+        font-size: 28px;
+        color: white;
+        background: none;
+        border: none;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 220px;
+        padding: 15px 0;
+        background: #222;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    header nav ul.activo {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 15px;
+        display: block;
+        transition: background 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+        background: #6c63ff;
+        border-radius: 5px;
+    }
+
+    #eslogan h1 {
+        font-size: 2rem;
+    }
+
+    #eslogan p {
+        font-size: 1rem;
+    }
+
+    #proyectos .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .botonProyectos {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #contactar h2 {
+        font-size: 1.6rem;
+    }
+
+    #contactar p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    header .logo img {
+        width: 120px;
+    }
+
+    header nav ul {
+        top: 60px;
+        right: 10px;
+        width: 200px;
+    }
+
+    #eslogan h1 {
+        font-size: 1.6rem;
+    }
+
+    #eslogan p {
+        font-size: 0.9rem;
+    }
+
+    #contactar h2 {
+        font-size: 1.4rem;
+    }
+}

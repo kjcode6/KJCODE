@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJCODE - Nosotros</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d0d0d;
+            color: #eaeaea;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: black;
+            padding: 15px 40px;
+            border-bottom: 2px solid #6c63ff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo img {
+            width: 150px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        header nav a {
+            color: #eaeaea;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        header nav a:hover,
+        header nav a.activo {
+            background: #6c63ff;
+            color: #fff;
+        }
+
+        main {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 60px;
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 4px 16px rgba(106, 13, 173, 0.25);
+            transition: transform 0.2s;
+        }
+
+        section:hover {
+            transform: translateY(-4px);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #6c63ff;
+            border-left: 5px solid #6c63ff;
+            padding-left: 15px;
+            text-shadow: 0 0 10px rgba(106, 13, 173, 0.6);
+        }
+
+        section p {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #eaeaea;
+            line-height: 1.7;
+        }
+
+        section img {
+            width: 300px;
+            height: 300px;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        section ul {
+            list-style: disc inside;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        #equipo .miembros {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        #equipo .miembro {
+            background: #111;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            border: 1px solid #333;
+        }
+
+        #equipo .miembro:hover {
+            background: #222;
+            transform: translateY(-5px);
+        }
+
+        #equipo .miembro h3 {
+            color: #6c63ff;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        #equipo .miembro p {
+            font-size: 20px;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        #equipo .miembro a {
+            display: inline-block;
+            background: #6c63ff;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        #equipo .miembro a:hover {
+            background: #4a42c5;
+        }
+
+        footer {
+            background: black;
+            color: #ddd;
+            padding: 50px 40px 20px;
+            border-top: 2px solid #6c63ff;
+        }
+
+        .pieDePagina {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .pieDePagina-seccion h3 {
+            color: #6c63ff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .pieDePagina-seccion ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pieDePagina-seccion ul li {
+            margin-bottom: 10px;
+        }
+
+        .pieDePagina-seccion ul li a {
+            text-decoration: none;
+            color: #bbb;
+            transition: color 0.3s;
+        }
+
+        .pieDePagina-seccion ul li a:hover {
+            color: #6c63ff;
+        }
+
+        .footer-logo {
+            width: 140px;
+            margin-bottom: 15px;
+        }
+
+        .redes a img {
+            width: 35px;
+            margin: 0 8px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .redes a img:hover {
+            transform: scale(1.1);
+        }
+
+        .pieDePagina-abajo {
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .pieDePagina-abajo ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .pieDePagina-abajo ul li a {
+            text-decoration: none;
+            color: #aaa;
+            transition: color 0.3s;
+        }
+
+        .pieDePagina-abajo ul li a:hover {
+            color: #6c63ff;
+        }
+
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 400px;
+            text-align: center;
+            color: #eaeaea;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s ease;
+        }
+
+        .modal-content h3 {
+            color: #6c63ff;
+            margin-bottom: 15px;
+        }
+
+        .close-btn {
+            background: #6c63ff;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .close-btn:hover {
+            background: #4a42c5;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 30px 20px;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            #equipo .miembros {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="KJCODELOGO.webp" alt="Logo KJCODE">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="INDEX.html">INICIO</a></li>
+                <li><a href="NOSOTROS.html" class="activo">NOSOTROS</a></li>
+                <li><a href="SERVICIOS.html">SERVICIOS</a></li>
+                <li><a href="CONTACTO.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="nosotros">
+            <h2>Nosotros 🚀</h2>
+            <p><strong>KJCODE</strong> es una startup de software creada por jóvenes programadores con una meta clara:
+                transformar ideas en soluciones digitales que hagan la diferencia. Somos un equipo <em>tech-driven</em>
+                que combina
+                <strong>creatividad, innovación y pasión por la programación</strong> para crear productos modernos,
+                escalables y potentes.
+            </p>
+            <p>No somos una empresa tradicional: vivimos el código, respiramos tecnología y entendemos que cada cliente
+                merece una solución <em>a su medida</em>. En <strong>KJCODE</strong> no solo desarrollamos software,
+                <span style="color:#6c63ff;">construimos futuro digital</span>.
+            </p>
+            <img src="KJCODELOGO.webp" alt="Logo KJCODE"
+                data-info="Este es el logo oficial de KJCODE, representa innovación y futuro digital.">
+        </section>
+
+        <section id="mision">
+            <h2>Misión 🎯</h2>
+            <p>En KJCODE tenemos la misión de diseñar y desarrollar soluciones de
+                software innovadoras, funcionales y personalizadas que impulsen el crecimiento
+                de nuestros clientes. Nos enfocamos en brindar tecnología de calidad con un
+                enfoque joven, creativo y ágil, que responda a las necesidades del presente y se
+                adapte a los retos del futuro.</p>
+        </section>
+
+        <section id="vision">
+            <h2>Visión 👁</h2>
+            <p>Ser una empresa líder en desarrollo de software a nivel nacional e
+                internacional, reconocida por su innovación, talento joven y compromiso con la
+                transformación digital. En KJCODE aspiramos a crear un impacto positivo en la
+                sociedad a través de soluciones tecnológicas que mejoren la vida de las personas
+                y potencien el crecimiento de las organizaciones.
+            </p>
+        </section>
+
+        <section id="valores">
+            <h2>Valores de la Empresa</h2>
+            <ul>
+                <li>Innovación: buscamos soluciones creativas y modernas en cada proyecto.</li>
+                <li>Responsabilidad: cumplimos con nuestros compromisos y tiempos de entrega.</li>
+                <li>Trabajo en equipo: colaboramos para lograr mejores resultados.</li>
+                <li>Compromiso con el cliente: escuchamos, entendemos y respondemos a sus necesidades.</li>
+                <li>Honestidad: trabajamos con transparencia y decimos siempre la verdad.</li>
+                <li>Constancia: trabajamos con esfuerzo diario y nunca nos rendimos.</li>
+            </ul>
+        </section>
+
+        <section id="equipo">
+            <h2>Nuestro Equipo 💻</h2>
+            <p>Conoce a los cerebros detrás de <strong>KJCODE</strong>:</p>
+            <div class="miembros">
+                <div class="miembro">
+                    <h3>Kevin Rodríguez</h3>
+                    <p>Co-fundador de KJCODE y desarrollador de software. Apasionado por transformar ideas en
+                        soluciones digitales modernas, funcionales y escalables que aportan valor real a cada proyecto.
+                    </p>
+                    <a href="https://wa.me/573188799710" target="_blank">📲 Contactar a Kevin</a>
+                </div>
+                <div class="miembro">
+                    <h3>Joan Pérez</h3>
+                    <p>Co-fundador de KJCODE y programador creativo. Su visión innovadora y pasión por el diseño
+                        impulsan a KJCODE a crear experiencias digitales únicas que marcan la diferencia.</p>
+                    <a href="https://wa.me/573003156797" target="_blank">📲 Contactar a Joan</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="pieDePagina">
+            <div class="pieDePagina-seccion">
+                <img src="LOGO ANGOSTO.webp" alt="KJCODE Logo" class="footer-logo">
+                <p><strong>Colombia</strong></p>
+                <p><strong>Cel:</strong> +57 318 879 9710</p>
+                <p><strong>Cel:</strong> +57 300 315 6797</p>
+                <p>Bogotá, Colombia</p>
+            </div>
+
+            <div class="pieDePagina-seccion">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="SERVICIOS.html">Desarrollo Web</a></li>
+                    <li><a href="SERVICIOS.html">Aplicaciones a la Medida</a></li>
+                    <li><a href="SERVICIOS.html">Inventario</a></li>
+                    <li><a href="SERVICIOS.html">Agendamiento de Citas</a></li>
+                    <li><a href="SERVICIOS.html">Mantenimiento Web</a></li>
+                </ul>
+            </div>
+
+            <div class="pieDePagina-seccion">
+                <h3>Síguenos</h3>
+                <div class="redes">
+                    <a href="https://www.instagram.com/kjco.de" target="_blank"><img src="INSTAGRAM.webp"
+                            alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@kjco.de" target="_blank"><img src="TIK TOK.webp"
+                            alt="TikTok"></a>
+                    <a href="https://www.facebook.com/profile.php?id=61580866250656" target="_blank"><img
+                            src="FACEBOOK.webp" alt="Facebook"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pieDePagina-abajo">
+            <p>&copy; 2025 KJCODE - Todos los derechos reservados</p>
+            <ul>
+                <li><a href="CONTACTO.html">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3>Información</h3>
+            <p id="modal-text"></p>
+            <button class="close-btn" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        const imagenes = document.querySelectorAll("section img");
+        const modal = document.getElementById("modal");
+        const modalText = document.getElementById("modal-text");
+
+        imagenes.forEach(img => {
+            img.addEventListener("click", () => {
+                modalText.textContent = img.getAttribute("data-info");
+                modal.classList.add("active");
+            });
+        });
+
+        function cerrarModal() {
+            modal.classList.remove("active");
+        }
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal.classList.contains("active")) {
+                cerrarModal();
+            }
+        });
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                cerrarModal();
+            }
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll("section").forEach(sec => observer.observe(sec));
+
+        const yearFooter = document.querySelector(".pieDePagina-abajo p");
+        if (yearFooter) {
+            const year = new Date().getFullYear();
+            yearFooter.innerHTML = `&copy; ${year} KJCODE - Todos los derechos reservados`;
+        }
+    </script>
+</body>
+
+</html>
